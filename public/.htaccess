@@ -1,0 +1,41 @@
+# PHP Configuración PHP para subida de archivos
+php_value max_file_uploads 200
+php_value upload_max_filesize 100M
+php_value post_max_size 500M
+php_value max_execution_time 600
+php_value memory_limit 512M
+php_value max_input_vars 3000
+php_flag display_errors Off
+
+# Usar archivo php.ini local
+SetEnv PHPRC /path/to/your/public/php.ini
+php_flag display_startup_errors off
+
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Handle X-XSRF-Token Header
+    RewriteCond %{HTTP:x-xsrf-token} .
+    RewriteRule .* - [E=HTTP_X_XSRF_TOKEN:%{HTTP:X-XSRF-Token}]
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Exclude download.php from Laravel routing
+    RewriteCond %{REQUEST_URI} !^/download\.php
+    
+    # Send Requests To Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>

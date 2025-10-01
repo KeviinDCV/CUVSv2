@@ -1117,9 +1117,9 @@ export default function Dashboard() {
                             </div>
                             <div>
                                 <h3 className="font-semibold text-base">
-                                    {isProcessing && processingType === 'json-sos' ? 'Procesando...' : 'Validar Json S.O.S'}
+                                    {isProcessing && processingType === 'json-sos' ? 'Procesando...' : 'Convertir Estructura JSON EPS S.O.S'}
                                 </h3>
-                                <p className="text-xs text-muted-foreground">Para sistema S.O.S</p>
+                                <p className="text-xs text-muted-foreground">Para EPS S.O.S</p>
                             </div>
                         </CardContent>
                     </Card>
@@ -1136,7 +1136,7 @@ export default function Dashboard() {
                             </div>
                             <div>
                                 <h3 className="font-semibold text-base">
-                                    {isProcessing && processingType === 'otras-eps' ? 'Procesando...' : 'Validar Json otras EPS'}
+                                    {isProcessing && processingType === 'otras-eps' ? 'Procesando...' : 'Convertir Estructura JSON otras EPS'}
                                 </h3>
                                 <p className="text-xs text-muted-foreground">Para otras EPS</p>
                             </div>
@@ -1155,9 +1155,9 @@ export default function Dashboard() {
                             </div>
                             <div>
                                 <h3 className="font-semibold text-base">
-                                    {isProcessing && processingType === 'coosalud' ? 'Procesando...' : 'Convertir JSON a Coosalud'}
+                                    {isProcessing && processingType === 'coosalud' ? 'Procesando...' : 'Convertir Estructura JSON EPS Coosalud'}
                                 </h3>
-                                <p className="text-xs text-muted-foreground">Para Coosalud</p>
+                                <p className="text-xs text-muted-foreground">Para EPS Coosalud</p>
                             </div>
                         </CardContent>
                     </Card>
@@ -1174,9 +1174,9 @@ export default function Dashboard() {
                             </div>
                             <div>
                                 <h3 className="font-semibold text-base">
-                                    {isProcessing && processingType === 'generar-excel' ? 'Procesando...' : 'Generar Excel'}
+                                    {isProcessing && processingType === 'generar-excel' ? 'Procesando...' : 'Convertir JSON a EXCEL'}
                                 </h3>
-                                <p className="text-xs text-muted-foreground">Convertir JSON a Excel</p>
+                                <p className="text-xs text-muted-foreground">JSON a Excel</p>
                             </div>
                         </CardContent>
                     </Card>
